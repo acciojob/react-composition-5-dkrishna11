@@ -1,12 +1,30 @@
+import React, { useState } from 'react';
 
+const Tabs = ({ tabs, key }) => {
+  const [activeTab, setActiveTab] = useState(0);
 
-function Tabs(probs){
+  const handleTabClick = (index) => {
+    setActiveTab(index);
+  };
 
-    return (
-        <div>
-            <p>Content of Tab {probs.title}</p>
-        </div>
-    );
-}
+  return (
+    <div className="tabs-container">
+      <div className="tabs">
+        {tabs.map((tab, index) => (
+          <div
+            key={index}
+            className={`tab ${activeTab === index ? 'active' : ''}`}
+            onClick={() => handleTabClick(index)}
+          >
+            {tab.title}
+          </div>
+        ))}
+      </div>
+      <div className="content">
+        {tabs[activeTab].content}
+      </div>
+    </div>
+  );
+};
 
 export default Tabs;

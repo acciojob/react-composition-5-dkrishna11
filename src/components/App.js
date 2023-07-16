@@ -4,22 +4,35 @@ import './../styles/App.css';
 import Tabs from "./Tabs"
 
 const App = () => {
-  let [table, setTable]=useState("")
+  const tabsSet1 = [
+    {
+      title: 'Tab 1 Set 1',
+      content: <div>Content of Tab 1 Set 1</div>,
+    },
+    {
+      title: 'Tab 2 Set 1',
+      content: <div>Content of Tab 2 Set 1</div>,
+    },
+    // Add more tabs as needed for set 1
+  ];
+
+  const tabsSet2 = [
+    {
+      title: 'Tab 1 Set 2',
+      content: <div>Content of Tab 1 Set 2</div>,
+    },
+    {
+      title: 'Tab 2 Set 2',
+      content: <div>Content of Tab 2 Set 2</div>,
+    },
+    // Add more tabs as needed for set 2
+  ];
+
   return (
     <div>
-        <ul onClick={(eve)=>{setTable(eve.target.value)}}>
-          <li>Tab 1</li>
-          <li>Tab 2</li>
-          <li>Tab 3</li>
-        </ul>
-        <Tabs title={table}></Tabs>
-
-        <ul onClick={(eve)=>{setTable(eve.target.value)}}>
-          <li>Tab A</li>
-          <li>Tab B</li>
-          <li>Tab C</li>
-        </ul>
-        <Tabs title={table}></Tabs>
+      <Tabs tabs={tabsSet1} key="set1" />
+      <Tabs tabs={tabsSet2} key="set2" />
+      {/* Add more Tabs components with different sets of tabs as needed */}
     </div>
   )
 }
