@@ -1,7 +1,7 @@
 
 import React, {useState} from "react";
 import './../styles/App.css';
-import Tab from "./Tab"
+import Tabs from "./Tabs"
 
 const App = () => {
   let [table, setTable]=useState("")
@@ -12,14 +12,14 @@ const App = () => {
           <li>Tab 2</li>
           <li>Tab 3</li>
         </ul>
-        <Tab title={table}></Tab>
+        <Tabs title={table}></Tabs>
 
         <ul onClick={(eve)=>{setTable(eve.target.value)}}>
           <li>Tab A</li>
           <li>Tab B</li>
           <li>Tab C</li>
         </ul>
-        <Tab title={table}></Tab>
+        <Tabs title={table}></Tabs>
     </div>
   )
 }

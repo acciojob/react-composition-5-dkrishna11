@@ -1,6 +1,6 @@
 
 
-function Tab(probs){
+function Tabs(probs){
 
     return (
         <div>
@@ -9,4 +9,4 @@ function Tab(probs){
     );
 }
 
-export default Tab;
+export default Tabs;
